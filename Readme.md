@@ -43,3 +43,29 @@ Meaning of Orchestration => Arrangement, coordination and management of complex 
 
 # Kuberctl command flow
 ![alt text](https://i.imgur.com/f8PsGWt.png)
+
+## Nodes A.K.A Minions
+
+### kubelet
+* The main kubernetes agent
+* Register node with cluster
+* Watches apiserver
+* Instatiates pods
+* Reports back to master
+* Exposes endpoint on :10255
+* Enpoint `/spec /healthz /pods`
+
+### Container Engine
+* Does Container Management:
+    * Pulling images
+    * starting/stopping containers
+    * ....
+Pluggable:
+* Usually Docker
+* Can be rkt
+
+### Kube-proxy
+* kubernetes networking:
+    * Pod IP addresses:
+        * All containers in pod share a single IP
+    * Load balancer accros all pods in a service
